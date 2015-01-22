@@ -1,5 +1,6 @@
 var _ = require("lodash");
 var Base64 = require("meteor-base64");
+var EJSON;
 /**
  * @namespace
  * @summary Namespace for EJSON functions
