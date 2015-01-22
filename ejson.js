@@ -1,7 +1,8 @@
-var _ = require("lodash");
-var Base64 = require("meteor-base64");
-var EJSON;
-var EJSONTest;
+module.exports=function(Meteor) {
+  var _ = Meteor.underscore;
+  var Base64 = Meteor.Base64
+  var EJSON;
+  var EJSONTest;
 /**
  * @namespace
  * @summary Namespace for EJSON functions
@@ -511,4 +512,5 @@ EJSON.clone = function (v) {
 // then 'base64' would have to use EJSON.newBinary, and 'ejson' would
 // also have to use 'base64'.)
 EJSON.newBinary = Base64.newBinary;
-module.exports = EJSON;
+  Meteor.EJSON = EJSON;
+};
